@@ -43,33 +43,38 @@ class Section
         return $this;
     }
 
-    /**
-     * @return Collection<int, Etudiant>
-     */
-    public function getEtudiants(): Collection
+    // /**
+    //  * @return Collection<int, Etudiant>
+    //  */
+    // public function getEtudiants(): Collection
+    // {
+    //     return $this->etudiants;
+    // }
+
+    // public function addEtudiant(Etudiant $etudiant): self
+    // {
+    //     if (!$this->etudiants->contains($etudiant)) {
+    //         $this->etudiants[] = $etudiant;
+    //         $etudiant->setSection($this);
+    //     }
+
+    //     return $this;
+    // }
+
+    // public function removeEtudiant(Etudiant $etudiant): self
+    // {
+    //     if ($this->etudiants->removeElement($etudiant)) {
+    //         // set the owning side to null (unless already changed)
+    //         if ($etudiant->getSection() === $this) {
+    //             $etudiant->setSection(null);
+    //         }
+    //     }
+
+    //     return $this;
+    // }
+
+    public function __toString()
     {
-        return $this->etudiants;
-    }
-
-    public function addEtudiant(Etudiant $etudiant): self
-    {
-        if (!$this->etudiants->contains($etudiant)) {
-            $this->etudiants[] = $etudiant;
-            $etudiant->setSection($this);
-        }
-
-        return $this;
-    }
-
-    public function removeEtudiant(Etudiant $etudiant): self
-    {
-        if ($this->etudiants->removeElement($etudiant)) {
-            // set the owning side to null (unless already changed)
-            if ($etudiant->getSection() === $this) {
-                $etudiant->setSection(null);
-            }
-        }
-
-        return $this;
+        return ( $this -> Designation);
     }
 }

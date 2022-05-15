@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Ajout d'étudiants {% endblock %}
+
+{% block style %} <style>
+
+    .card{
+        margin: 5% ;
+        box-shadow: rgba(0, 0, 0, 0.048) !important;
+        background-color: rgba(255, 255, 255, 0.603);
+    }
+
+    body{
+        background-color: #ffffff;
+opacity: 1;
+background-image:  linear-gradient(30deg, #fffef5 12%, transparent 12.5%, transparent 87%, #fffef5 87.5%, #fffef5), linear-gradient(150deg, #fffef5 12%, transparent 12.5%, transparent 87%, #fffef5 87.5%, #fffef5), linear-gradient(30deg, #fffef5 12%, transparent 12.5%, transparent 87%, #fffef5 87.5%, #fffef5), linear-gradient(150deg, #fffef5 12%, transparent 12.5%, transparent 87%, #fffef5 87.5%, #fffef5), linear-gradient(60deg, #fffef577 25%, transparent 25.5%, transparent 75%, #fffef577 75%, #fffef577), linear-gradient(60deg, #fffef577 25%, transparent 25.5%, transparent 75%, #fffef577 75%, #fffef577);
+background-size: 80px 140px;
+background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    }
+
+</style>
+ {% endblock %}
+
+{% block body %}
+
+
+<br><br><br>
+<div class="card" >
+            <h3> Remplissez ce formulaire afin d'ajouter un étudiant : </h3>
+            <br><br>
+                {{ form(formulaire)}}
+                <br><br><br>
+                <a href="/liste">Retour à la liste des étudiants </a>
+  </div>
+<br><br><br>
+
+
+{% endblock %}

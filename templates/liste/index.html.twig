@@ -2,7 +2,12 @@
 
 {% block title %} Liste des étudiants {% endblock %}
 {% block style %}
+
+<link rel="stylesheet" href="C:\Users\RJIBA\ExamenTP\public\css\style.css">
 <style>
+    .highlight{
+        color: red;
+    }
     .tags{
         background-color: rgb(200, 218, 252) !important;
     }
@@ -25,6 +30,8 @@
     }
 
 </style>
+
+
 {% endblock %}
 
 {% block body %}
@@ -33,11 +40,11 @@
 <div class="example-wrapper">
     
     <h1>Liste des étudiants ✅</h1>
-    <a href="#"> ajouter un étudiant </a>
+    <a href="/add"> ajouter un étudiant </a>
 </div>
 <br><br><br>
 
-<table class="highlight striped" >
+<table class=" striped" >
     <tr class="tags">
         <td>FirstName</td>
         <td>Name</td>
@@ -46,15 +53,29 @@
     </tr>
     {% for etudiant in etudiants %}
     <tr>
-        <td>{{ etudiant.nom}}</td>
-        <td>{{ etudiant.prenom}}</td>
-        <td>{{ etudiant.section.designation}}</td>
+        <td onclick=changeColor(this)>{{ etudiant.nom}}</td>
+        <td onclick=changeColor(this)>{{ etudiant.prenom}}</td>
+        <td onclick=changeColor(this)>{{ etudiant.section.designation}}</td>
         <td>
-            <a class="edit" href="">Edit</a>
+            <a class="edit" href="{{ path('edit_etudiant',{id : etudiant.id}) }}">Edit</a>
             <br>
-            <a class="delete" href="">delete</a>
+            <a class="delete" href="{{ path('delete_etudiant',{id : etudiant.id}) }}">delete</a>
         </td>
     </tr>
     {% endfor %}
 </table>
+
+
+<script>
+
+    function changeColor (element){
+        if (element.className !== "highlight" ) {
+            element.className = "highlight";
+        
+        }
+        else {
+            element.className = "";
+        }
+        }
+</script> 
 {% endblock %}

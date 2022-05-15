@@ -4,7 +4,9 @@ namespace App\Form;
 
 use App\Entity\Etudiant;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class AjoutType extends AbstractType
@@ -15,6 +17,9 @@ class AjoutType extends AbstractType
             ->add('nom')
             ->add('prenom')
             ->add('section')
+
+            
+            -> add ( 'Ajouter' , SubmitType::class)
         ;
     }
 
