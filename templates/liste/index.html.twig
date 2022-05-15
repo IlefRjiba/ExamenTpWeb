@@ -1,20 +1,60 @@
 {% extends 'base.html.twig' %}
 
 {% block title %} Liste des étudiants {% endblock %}
+{% block style %}
+<style>
+    .tags{
+        background-color: rgb(200, 218, 252) !important;
+    }
+
+    .edit{
+        color:mediumseagreen ;
+        text-decoration: underline;
+    }
+    .delete:hover{
+        color: rgb(245, 151, 151);
+        text-decoration: underline;
+    }
+    .edit:hover{
+        color: rgb(184, 224, 3);
+        text-decoration: underline;
+    }
+    .delete{
+        color: rgb(255, 0, 0);
+        text-decoration: underline;
+    }
+
+</style>
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+
 
 <div class="example-wrapper">
+    
     <h1>Liste des étudiants ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/RJIBA/ExamenTP/src/Controller/ListeController.php'|file_link(0) }}">src/Controller/ListeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/RJIBA/ExamenTP/templates/liste/index.html.twig'|file_link(0) }}">templates/liste/index.html.twig</a></code></li>
-    </ul>
+    <a href="#"> ajouter un étudiant </a>
 </div>
+<br><br><br>
+
+<table class="highlight striped" >
+    <tr class="tags">
+        <td>FirstName</td>
+        <td>Name</td>
+        <td>Section</td>
+        <td>Action</td>
+    </tr>
+    {% for etudiant in etudiants %}
+    <tr>
+        <td>{{ etudiant.nom}}</td>
+        <td>{{ etudiant.prenom}}</td>
+        <td>{{ etudiant.section.designation}}</td>
+        <td>
+            <a class="edit" href="">Edit</a>
+            <br>
+            <a class="delete" href="">delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}
